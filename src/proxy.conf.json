@@ -1,0 +1,7 @@
+{
+  "/publicAPI": {
+    "target": "https://api.bls.gov",
+    "secure": true,
+    "changeOrigin": true
+  }
+} 

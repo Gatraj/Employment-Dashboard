@@ -1,0 +1,10 @@
+{
+  "/bls-api": {
+    "target": "https://api.bls.gov/publicAPI/v2/timeseries/data",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/bls-api": ""
+    }
+  }
+} 
