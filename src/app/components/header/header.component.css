@@ -1,0 +1,59 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.nav-section {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-section button {
+  font-size: 1rem;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+}
+
+/* Add some hover effects */
+button:hover {
+  opacity: 0.9;
+}
+
+/* Make the header responsive */
+@media (max-width: 768px) {
+  .nav-section {
+    display: none;
+  }
+  
+  .header-content {
+    justify-content: space-between;
+  }
+}

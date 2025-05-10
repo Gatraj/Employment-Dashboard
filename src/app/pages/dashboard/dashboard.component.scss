@@ -1,0 +1,135 @@
+.dashboard-container {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dashboard-header {
+  h1 {
+    color: #2c3e50;
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+  }
+}
+
+.filters-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .filter-group {
+    flex: 1;
+    min-width: 200px;
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #5c6b7a;
+      font-weight: 500;
+    }
+
+    select {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #dce1e8;
+      border-radius: 4px;
+      background-color: #fff;
+      font-size: 14px;
+      color: #2c3e50;
+      transition: border-color 0.2s;
+
+      &:focus {
+        outline: none;
+        border-color: #3498db;
+      }
+
+      &:disabled {
+        background-color: #f5f6f7;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+.chart-section {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-height: 400px;
+
+  ::ng-deep {
+    .ngx-charts {
+      fill: #2c3e50;
+    }
+  }
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  
+  p {
+    margin-top: 16px;
+    color: #5c6b7a;
+  }
+}
+
+.error-message, .no-data-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+  background-color: #fff3f3;
+  border-radius: 8px;
+  color: #e74c3c;
+
+  mat-icon {
+    font-size: 24px;
+    height: 24px;
+    width: 24px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.no-data-message {
+  background-color: #f8f9fa;
+  color: #5c6b7a;
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 16px;
+  }
+
+  .filters-section {
+    flex-direction: column;
+    padding: 16px;
+
+    .filter-group {
+      width: 100%;
+    }
+  }
+
+  .chart-section {
+    min-height: 300px;
+  }
+} 
