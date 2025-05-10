@@ -20,11 +20,20 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Clean install dependencies
+        run: |
+          rm -rf node_modules
+          rm -f package-lock.json
+          npm install
+
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli@17.2.0
 
       - name: Build
-        run: npm run build:prod
+        run: |
+          npm run build:prod
+        env:
+          CI: true
 
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
